@@ -27,6 +27,11 @@ IF(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
    "None" "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
 ENDIF()
 
+PROJECT(MariaDB)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fpatchable-function-entry=16,14 -fdump-ipa-clones")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fpatchable-function-entry=16,14 -fdump-ipa-clones")
+
 # Remove the following comment if you don't want to have striped binaries
 # in RPM's:
 
