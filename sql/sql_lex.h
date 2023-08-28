@@ -3359,7 +3359,8 @@ public:
     When parsing such statements the pointer to the most outer select is placed
     into the second element of select_stack rather than into the first.
   */
-  uint select_stack_outer_barrier;
+  //LP
+  //uint select_stack_outer_barrier;
 
   SQL_I_List<ORDER> proc_list;
   SQL_I_List<TABLE_LIST> auxiliary_table_list, save_list;
@@ -3796,7 +3797,8 @@ public:
   }
 
   bool copy_db_to(LEX_CSTRING *to);
-
+  //LP
+  /*
   void inc_select_stack_outer_barrier()
   {
     select_stack_outer_barrier++;
@@ -3806,7 +3808,7 @@ public:
   {
     return select_stack_top - 1 == select_stack_outer_barrier ?
              0 : select_stack[select_stack_top - 2];
-  }
+  } */
 
   Name_resolution_context *current_context()
   {

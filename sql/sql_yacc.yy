@@ -2473,7 +2473,8 @@ create:
             lex->query_tables->open_strategy= TABLE_LIST::OPEN_STUB;
             lex->name= null_clex_str;
             lex->create_last_non_select_table= lex->last_table();
-            lex->inc_select_stack_outer_barrier();
+            //LP
+            //lex->inc_select_stack_outer_barrier();
           }
           create_body
           {
@@ -2628,7 +2629,8 @@ create:
           {
             if (Lex->main_select_push())
               MYSQL_YYABORT;
-            Lex->inc_select_stack_outer_barrier();
+            //LP
+            //Lex->inc_select_stack_outer_barrier();
             if (Lex->add_create_view(thd, $1 | $5,
                                      DTYPE_ALGORITHM_UNDEFINED, $3, $6))
               MYSQL_YYABORT;
@@ -2644,7 +2646,8 @@ create:
               MYSQL_YYABORT;
             if (Lex->main_select_push())
               MYSQL_YYABORT;
-            Lex->inc_select_stack_outer_barrier();
+            //LP
+            //Lex->inc_select_stack_outer_barrier();
           }
           view_list_opt AS view_select
           {
@@ -13175,7 +13178,7 @@ insert_start: {
                 if (Lex->main_select_push())
                   MYSQL_YYABORT;
                 Lex->init_select();
-                Lex->inc_select_stack_outer_barrier();
+                //Lex->inc_select_stack_outer_barrier();
                 Lex->current_select->parsing_place= BEFORE_OPT_LIST;
               }
               ;
