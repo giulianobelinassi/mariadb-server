@@ -39,6 +39,9 @@ ENDFOREACH()
 
 PROJECT(MariaDB)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fpatchable-function-entry=16,14 -fdump-ipa-clones")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fpatchable-function-entry=16,14 -fdump-ipa-clones")
+
 MESSAGE(STATUS "Running cmake version ${CMAKE_VERSION}")
 
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
