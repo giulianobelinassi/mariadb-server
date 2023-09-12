@@ -143,6 +143,7 @@ static inline void inline_mysql_statement_register(
 static inline struct PSI_digest_locker *
 inline_mysql_digest_start(PSI_statement_locker *locker)
 {
+  printf("This print should be removed in livepatching.\n");
   PSI_digest_locker* digest_locker= NULL;
 
   if (psi_likely(locker != NULL))
